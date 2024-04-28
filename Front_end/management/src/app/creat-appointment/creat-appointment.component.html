@@ -1,0 +1,58 @@
+
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+    <a style="color: white;" class="navbar-brand" href="#">NARMADA HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/home">Home</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+  
+<form (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1 class="text-center">Registered Appointment</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="col-md-12">
+            <div class="lg bg-dark" style="color: white;">
+              <h4 class="text-center">Please enter your details !!</h4>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name" [(ngModel)]="appointment.name" required>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" class="form-control" name="age" placeholder="Enter your Age" [(ngModel)]="appointment.age" required>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="symptoms">Symptoms</label>
+              <input type="text" id="symptoms" class="form-control" name="symptoms" placeholder="Enter your symptoms" [(ngModel)]="appointment.symtomps" required>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="number">Number</label>
+              <input type="number" id="number" class="form-control" name="number" placeholder="Enter your number" [(ngModel)]="appointment.number" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>

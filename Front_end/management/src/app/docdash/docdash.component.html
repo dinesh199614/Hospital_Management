@@ -1,0 +1,69 @@
+
+<nav class="navbar navbar-expand-lg bg-dark">
+
+    <a class="navbar-brand text-white" href="#">NARMADA HOSPITALS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/create-patient">Registered Patient</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/view-medicine">Medicine</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-2">
+      <button class="btn btn-danger" data-toggle="modal" data-target="#loginModal">
+          <a class="text-white" (click)=logout()>Logout</a>
+      </button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+<h2 class="text-center">Pateint Dashboard</h2>
+<p style="color: rgb(86, 86, 86); font-size: x-large;"><marquee behavior="scroll" direction="left">
+  Welcome to patient Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add patient to add new patients, click View Medicine to view update Medicine </marquee></p>
+
+
+<h5 class="text-center">Current Patient List in the Queue</h5>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="table-header">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>dose</th>
+                <th>prescription</th>
+                <th>blood type</th>
+                <th>urgency</th>
+
+
+                 <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{patient.dose}}</td>
+                <td>{{patient.prescription}}</td>
+                <td>{{patient.blood}}</td>
+                <td>{{ patient.urgency }}</td> 
+
+                
+              <!--  <td>
+                    <button (click)="delete(patient.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
